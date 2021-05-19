@@ -39,17 +39,16 @@ Array.prototype.getRandom = function () {
 
 function pairs(names) {
   // Your code goes here
-  let spli
-   
-  
-  // while(names.lenght % 2 === 0){
-    
-    spli = names.splice(names.lenght)
-    names.push(spli.slice(names.lenght))
-    names=names.getRandom();
-    return [spli]
-  // }
-  // return [spli]
+  let list =[]
+  if(names.lenght % 2 !== 0){
+     list.push([names.pop()])
+      
+   }
+  for(let i=0; i<names.lenght;i++)
+   {
+     list.push([names.getRandom(),names.getRandom()])
+   }
+  return list
   
 }
 
