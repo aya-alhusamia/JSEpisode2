@@ -34,10 +34,23 @@
  ************************************************/
 Array.prototype.getRandom = function () {
   return this.splice(Math.floor(Math.random() * this.length), 1)[0];
+
 };
 
 function pairs(names) {
   // Your code goes here
+  let spli
+   
+  
+  // while(names.lenght % 2 === 0){
+    
+    spli = names.splice(names.lenght)
+    names.push(spli.slice(names.lenght))
+    names=names.getRandom();
+    return [spli]
+  // }
+  // return [spli]
+  
 }
 
 module.exports = pairs;
