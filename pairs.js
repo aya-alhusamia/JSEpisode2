@@ -39,16 +39,14 @@ Array.prototype.getRandom = function () {
 
 function pairs(names) {
   // Your code goes here
-  let list =[]
-  if(names.lenght % 2 !== 0){
-     list.push([names.pop()])
-      
+   const groups = [];
+   if(names){
+     while(names.length>1){
+       groups.push([names.getRandom(),names.getRandom()])
+     }
+     if (names.length ===1)groups.push([names.getRandom()])
    }
-  for(let i=0; i<names.lenght;i++)
-   {
-     list.push([names.getRandom(),names.getRandom()])
-   }
-  return list
+   return groups
   
 }
 
@@ -56,4 +54,7 @@ module.exports = pairs;
 
 console.log(
   pairs(["Asis", "Hamsa", "Fawas", "Mishmish", "Hussein", "Lailz", "Mr Potato"])
+);
+console.log(
+  pairs(["Asis", "Hamsa", "Fawas", "Mishmish", "Hussein", "Lailz"])
 );
